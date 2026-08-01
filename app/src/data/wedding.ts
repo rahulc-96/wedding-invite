@@ -1,0 +1,54 @@
+import { buildIcsDataUrl } from '../lib/ics';
+
+export const WEDDING_DATETIME = '2026-11-12T17:00:00+05:30';
+
+export interface EventInfo {
+  id: string;
+  date: string;
+  title: string;
+  time: string;
+  description: string;
+  dress: string;
+  where: string;
+  icsHref: string;
+  icsFilename: string;
+}
+
+export const events: EventInfo[] = [
+  {
+    id: 'haldi',
+    date: 'Nov 11 2026',
+    title: 'Haldi',
+    time: '11 AM to 2 PM',
+    description:
+      'Turmeric, marigolds and a lot of laughter in the garden courtyard. Come ready to be coloured.',
+    dress: 'Yellow & white, comfortable cottons',
+    where: 'The Orchard Lawn, Farmhouse Collective',
+    icsHref: buildIcsDataUrl('Haldi', '20261111T053000Z', '20261111T083000Z'),
+    icsFilename: 'haldi.ics',
+  },
+  {
+    id: 'sangeet',
+    date: 'Nov 11 2026',
+    title: 'Sangeet',
+    time: '6 PM onwards',
+    description: 'An evening of music, family performances and dinner under the banyan lights.',
+    dress: 'Indian festive, jewel tones',
+    where: 'The Banyan Court, Farmhouse Collective',
+    icsHref: buildIcsDataUrl('Sangeet', '20261111T123000Z', '20261111T170000Z'),
+    icsFilename: 'sangeet.ics',
+  },
+  {
+    id: 'wedding',
+    date: 'Nov 12 2026',
+    title: 'Wedding',
+    time: '5 PM onwards',
+    description: 'The muhurtham at dusk by the lotus pond, followed by dinner and blessings.',
+    dress: 'Traditional formal, ivory & gold welcome',
+    where: 'The Pond Mandap, Farmhouse Collective',
+    icsHref: buildIcsDataUrl('Wedding', '20261112T113000Z', '20261112T170000Z'),
+    icsFilename: 'wedding.ics',
+  },
+];
+
+export const mapUrl = 'https://www.google.com/maps/search/?api=1&query=Farmhouse+Collective+Bangalore';

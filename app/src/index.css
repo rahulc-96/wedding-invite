@@ -1,0 +1,63 @@
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #efe3d2;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #7a1c2e;
+  text-decoration: none;
+}
+a:hover {
+  color: #a53a4a;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+}
+
+#root {
+  min-height: 100vh;
+  background: #efe3d2;
+  display: flex;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  color: #4a3a2e;
+}
+
+@keyframes petalFall {
+  0% {
+    transform: translate3d(0, -8vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translate3d(6vw, 108vh, 0) rotate(320deg);
+    opacity: 0;
+  }
+}
+
+@keyframes softGlow {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
