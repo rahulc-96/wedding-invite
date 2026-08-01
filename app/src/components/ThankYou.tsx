@@ -1,4 +1,5 @@
 import { Reveal } from './Reveal';
+import invitationDownload from '../assets/invitation-download.jpg';
 
 export function ThankYou() {
   return (
@@ -27,6 +28,24 @@ export function ThankYou() {
         <p style={{ margin: '26px 0 0', fontSize: 11, letterSpacing: '.36em', textTransform: 'uppercase', color: '#e2bd94' }}>
           Rahul &amp; Supriya &middot; Nov 2026
         </p>
+        <a
+          href={invitationDownload}
+          download="Rahul-Supriya-Invitation.jpg"
+          style={{
+            marginTop: 26,
+            minHeight: 44,
+            display: 'inline-flex',
+            alignItems: 'center',
+            padding: '0 20px',
+            border: '1px solid #e2bd94',
+            color: '#f7eee1',
+            fontSize: 11,
+            letterSpacing: '.24em',
+            textTransform: 'uppercase',
+          }}
+        >
+          Download Invitation
+        </a>
       </Reveal>
     </section>
   );
