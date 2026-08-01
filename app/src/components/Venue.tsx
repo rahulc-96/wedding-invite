@@ -67,8 +67,17 @@ export function Venue() {
           Share invite
         </button>
       </div>
-      <p style={{ margin: '14px 0 0', fontSize: 14, lineHeight: 1.7, color: '#6d5a45', textAlign: 'center' }}>
-        Valet parking at Gate 2. Shuttles run from Indiranagar every 30 minutes from 4 PM.
+      <p
+        style={{
+          margin: '14px 0 0',
+          fontSize: 14,
+          lineHeight: 1.7,
+          color: '#6d5a45',
+          textAlign: 'center',
+          textWrap: 'balance',
+        }}
+      >
+        Please feel free to reach out to us if you need any assistance with transportation or directions.
       </p>
     </section>
   );

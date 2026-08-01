@@ -58,7 +58,7 @@ export function Cover({ guest, onOpen }: CoverProps) {
             position: 'absolute',
             left: '20%',
             right: '20%',
-            top: '16%',
+            top: '11%',
             textAlign: 'center',
             color: '#7a1c2e',
           }}
