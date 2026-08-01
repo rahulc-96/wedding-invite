@@ -1,4 +1,5 @@
 import { buildIcsDataUrl } from '../lib/ics';
+import { buildGoogleCalendarUrl } from '../lib/calendar';
 
 export const WEDDING_DATETIME = '2026-11-12T17:00:00+05:30';
 
@@ -12,6 +13,7 @@ export interface EventInfo {
   where: string;
   icsHref: string;
   icsFilename: string;
+  googleHref: string;
 }
 
 export const events: EventInfo[] = [
@@ -26,6 +28,7 @@ export const events: EventInfo[] = [
     where: 'The Farmhouse Backyard',
     icsHref: buildIcsDataUrl('Haldi', '20261111T053000Z', '20261111T083000Z'),
     icsFilename: 'haldi.ics',
+    googleHref: buildGoogleCalendarUrl('Haldi', '20261111T053000Z', '20261111T083000Z', 'Farmhouse Collective, Bangalore'),
   },
   {
     id: 'sangeet',
@@ -37,6 +40,7 @@ export const events: EventInfo[] = [
     where: 'The Farmhouse Backyard',
     icsHref: buildIcsDataUrl('Sangeet', '20261111T123000Z', '20261111T170000Z'),
     icsFilename: 'sangeet.ics',
+    googleHref: buildGoogleCalendarUrl('Sangeet', '20261111T123000Z', '20261111T170000Z', 'Farmhouse Collective, Bangalore'),
   },
   {
     id: 'wedding',
@@ -48,6 +52,7 @@ export const events: EventInfo[] = [
     where: 'The Farmhouse Collective',
     icsHref: buildIcsDataUrl('Wedding', '20261112T113000Z', '20261112T170000Z'),
     icsFilename: 'wedding.ics',
+    googleHref: buildGoogleCalendarUrl('Wedding', '20261112T113000Z', '20261112T170000Z', 'Farmhouse Collective, Bangalore'),
   },
 ];
 

@@ -1,9 +1,23 @@
 import { useState } from 'react';
 import { events } from '../data/wedding';
 import { Reveal } from './Reveal';
+import { prefersAppleCalendar } from '../lib/calendar';
 
 function EventCard({ event, defaultOpen = false }: { event: (typeof events)[number]; defaultOpen?: boolean }) {
   const [open, setOpen] = useState(defaultOpen);
+
+  const handleAddToCalendar = () => {
+    if (prefersAppleCalendar()) {
+      const link = document.createElement('a');
+      link.href = event.icsHref;
+      link.download = event.icsFilename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      window.open(event.googleHref, '_blank', 'noopener,noreferrer');
+    }
+  };
 
   return (
     <Reveal style={{ border: '1px solid #ddc9a8', background: '#fdf8ef' }}>
@@ -69,22 +83,24 @@ function EventCard({ event, defaultOpen = false }: { event: (typeof events)[numb
             <span>{event.where}</span>
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 16 }}>
-            <a
-              href={event.icsHref}
-              download={event.icsFilename}
+            <button
+              type="button"
+              onClick={handleAddToCalendar}
               style={{
                 minHeight: 44,
                 display: 'flex',
                 alignItems: 'center',
                 padding: '0 16px',
                 border: '1px solid #7a1c2e',
+                background: 'none',
+                cursor: 'pointer',
                 fontSize: 11,
                 letterSpacing: '.22em',
                 textTransform: 'uppercase',
               }}
             >
               Add to calendar
-            </a>
+            </button>
           </div>
         </div>
       )}
