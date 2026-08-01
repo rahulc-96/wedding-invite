@@ -8,14 +8,19 @@ function EventCard({ event, defaultOpen = false }: { event: (typeof events)[numb
 
   const handleAddToCalendar = () => {
     if (prefersAppleCalendar()) {
-      const link = document.createElement('a');
-      link.href = event.icsHref;
-      link.download = event.icsFilename;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } else {
-      window.open(event.googleHref, '_blank', 'noopener,noreferrer');
+      // iOS Safari doesn't honor `download` on data: URIs, but it does
+      // recognise text/calendar on direct navigation and shows its native
+      // "Add to Calendar" sheet.
+      window.location.href = event.icsHref;
+      return;
+    }
+
+    // Plain `window.open` is silently blocked in a lot of mobile contexts
+    // (notably WhatsApp's in-app browser), so fall back to same-tab
+    // navigation whenever the popup doesn't actually open.
+    const opened = window.open(event.googleHref, '_blank', 'noopener,noreferrer');
+    if (!opened) {
+      window.location.href = event.googleHref;
     }
   };
 

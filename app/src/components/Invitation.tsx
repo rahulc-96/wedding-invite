@@ -5,7 +5,13 @@ export function Invitation() {
   return (
     <section id="invitation" style={{ scrollMarginTop: 0, background: '#f3e7d5' }}>
       <Reveal duration="1.1s" style={{ position: 'relative', width: '100%', containerType: 'inline-size' }}>
-        <img src={invitationArt} alt="Invitation" style={{ display: 'block', width: '100%', height: 'auto' }} />
+        <img
+          src={invitationArt}
+          alt="Invitation"
+          width={1024}
+          height={1536}
+          style={{ display: 'block', width: '100%', height: 'auto', aspectRatio: '1024 / 1536' }}
+        />
         <div
           style={{
             position: 'absolute',
