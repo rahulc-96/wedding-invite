@@ -35,7 +35,7 @@ export function Cover({ guest, onOpen }: CoverProps) {
             color: '#8a6a44',
           }}
         >
-          Om Gsnapataye Namah
+          Om Ganapataye Namah
         </span>
         {guest && (
           <span
