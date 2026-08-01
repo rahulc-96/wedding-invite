@@ -35,7 +35,7 @@ export function Cover({ guest, onOpen }: CoverProps) {
             color: '#8a6a44',
           }}
         >
-          Shree Ganeshaya Namah
+          Om Gsnapataye Namah
         </span>
         {guest && (
           <span
@@ -101,7 +101,7 @@ export function Cover({ guest, onOpen }: CoverProps) {
           >
             A celebration of love,
             <br />
-            family, and togetherness.
+            family and new beginnings.
           </p>
           <div
             style={{
