@@ -5,24 +5,7 @@ import { prefersAppleCalendar } from '../lib/calendar';
 
 function EventCard({ event, defaultOpen = false }: { event: (typeof events)[number]; defaultOpen?: boolean }) {
   const [open, setOpen] = useState(defaultOpen);
-
-  const handleAddToCalendar = () => {
-    if (prefersAppleCalendar()) {
-      // iOS Safari doesn't honor `download` on data: URIs, but it does
-      // recognise text/calendar on direct navigation and shows its native
-      // "Add to Calendar" sheet.
-      window.location.href = event.icsHref;
-      return;
-    }
-
-    // Plain `window.open` is silently blocked in a lot of mobile contexts
-    // (notably WhatsApp's in-app browser), so fall back to same-tab
-    // navigation whenever the popup doesn't actually open.
-    const opened = window.open(event.googleHref, '_blank', 'noopener,noreferrer');
-    if (!opened) {
-      window.location.href = event.googleHref;
-    }
-  };
+  const calendarHref = prefersAppleCalendar() ? event.icsHref : event.googleHref;
 
   return (
     <Reveal style={{ border: '1px solid #ddc9a8', background: '#fdf8ef' }}>
@@ -88,24 +71,23 @@ function EventCard({ event, defaultOpen = false }: { event: (typeof events)[numb
             <span>{event.where}</span>
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 16 }}>
-            <button
-              type="button"
-              onClick={handleAddToCalendar}
+            <a
+              href={calendarHref}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 minHeight: 44,
                 display: 'flex',
                 alignItems: 'center',
                 padding: '0 16px',
                 border: '1px solid #7a1c2e',
-                background: 'none',
-                cursor: 'pointer',
                 fontSize: 11,
                 letterSpacing: '.22em',
                 textTransform: 'uppercase',
               }}
             >
               Add to calendar
-            </button>
+            </a>
           </div>
         </div>
       )}

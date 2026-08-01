@@ -1,4 +1,4 @@
-export function buildIcsDataUrl(title: string, start: string, end: string): string {
+export function buildIcsBlobUrl(title: string, start: string, end: string): string {
   const body = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
@@ -10,5 +10,6 @@ export function buildIcsDataUrl(title: string, start: string, end: string): stri
     'END:VEVENT',
     'END:VCALENDAR',
   ].join('\r\n');
-  return 'data:text/calendar;charset=utf8,' + encodeURIComponent(body);
+  const blob = new Blob([body], { type: 'text/calendar;charset=utf-8' });
+  return URL.createObjectURL(blob);
 }
