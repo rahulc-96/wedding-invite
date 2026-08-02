@@ -68,16 +68,7 @@ export function Rsvp({ guestQuery }: RsvpProps) {
       {sent ? (
         <div
           ref={sentRef}
-          style={{
-            minHeight: '60vh',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            border: '1px solid #ddc9a8',
-            background: '#fdf8ef',
-            padding: '34px 24px',
-            textAlign: 'center',
-          }}
+          style={{ border: '1px solid #ddc9a8', background: '#fdf8ef', padding: '34px 24px', textAlign: 'center' }}
         >
           <p style={{ margin: 0, fontSize: 22, color: '#7a1c2e' }}>{no ? 'We will miss you' : 'You are on the list'}</p>
           <p style={{ margin: '10px 0 0', fontSize: 16, lineHeight: 1.7, color: '#6d5a45', textWrap: 'balance' }}>

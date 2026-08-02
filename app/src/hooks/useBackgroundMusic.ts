@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 // reaches MUSIC_LOOP_END_SECONDS it jumps back to the start and keeps going.
 // Set MUSIC_LOOP_END_SECONDS to null to just loop the entire file naturally.
 export const MUSIC_LOOP_START_SECONDS = 0;
-export const MUSIC_LOOP_END_SECONDS: number | null = 0;
+export const MUSIC_LOOP_END_SECONDS: number | null = 42;
 // -----------------------------------------------------------------------
 
 export function useBackgroundMusic() {
