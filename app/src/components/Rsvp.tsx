@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { supabase } from '../lib/supabase';
+import { events } from '../data/wedding';
 import { Reveal } from './Reveal';
 
 type Attending = '' | 'yes' | 'no';
@@ -13,12 +14,22 @@ export function Rsvp({ guestQuery }: RsvpProps) {
   const [name, setName] = useState('');
   const [guests, setGuests] = useState('1');
   const [note, setNote] = useState('');
+  const [attendingEvents, setAttendingEvents] = useState<string[]>(events.map((e) => e.id));
   const [err, setErr] = useState('');
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const sentRef = useRef<HTMLDivElement | null>(null);
 
   const yes = attending === 'yes';
   const no = attending === 'no';
+
+  useEffect(() => {
+    if (sent) sentRef.current?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  }, [sent]);
+
+  const toggleEvent = (id: string) => {
+    setAttendingEvents((prev) => (prev.includes(id) ? prev.filter((e) => e !== id) : [...prev, id]));
+  };
 
   const submit = async () => {
     if (!attending) return setErr('Please let us know if you can make it.');
@@ -32,6 +43,7 @@ export function Rsvp({ guestQuery }: RsvpProps) {
       guests: Number(guests),
       note,
       guest_query: guestQuery || null,
+      attending_events: attending === 'yes' ? attendingEvents : [],
     });
     setSubmitting(false);
 
@@ -54,9 +66,21 @@ export function Rsvp({ guestQuery }: RsvpProps) {
       </Reveal>
 
       {sent ? (
-        <div style={{ border: '1px solid #ddc9a8', background: '#fdf8ef', padding: '34px 24px', textAlign: 'center' }}>
+        <div
+          ref={sentRef}
+          style={{
+            minHeight: '60vh',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            border: '1px solid #ddc9a8',
+            background: '#fdf8ef',
+            padding: '34px 24px',
+            textAlign: 'center',
+          }}
+        >
           <p style={{ margin: 0, fontSize: 22, color: '#7a1c2e' }}>{no ? 'We will miss you' : 'You are on the list'}</p>
-          <p style={{ margin: '10px 0 0', fontSize: 16, lineHeight: 1.7, color: '#6d5a45' }}>
+          <p style={{ margin: '10px 0 0', fontSize: 16, lineHeight: 1.7, color: '#6d5a45', textWrap: 'balance' }}>
             {no
               ? `Thank you for letting us know, ${name || 'friend'}. We will raise a glass to you.`
               : `Thank you, ${name || 'friend'}. ${guests} seat(s) reserved. See you in November.`}
@@ -104,6 +128,70 @@ export function Rsvp({ guestQuery }: RsvpProps) {
               Regretfully no
             </button>
           </div>
+
+          {yes && (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              <span
+                style={{
+                  fontSize: 11,
+                  letterSpacing: '.24em',
+                  textTransform: 'uppercase',
+                  color: '#8a6a44',
+                }}
+              >
+                Which celebrations will you join?
+              </span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {events.map((event) => (
+                  <label
+                    key={event.id}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 10,
+                      border: '1px solid #ddc9a8',
+                      background: '#fdf8ef',
+                      padding: '12px 14px',
+                      fontSize: 16,
+                      color: '#4a3a2e',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={attendingEvents.includes(event.id)}
+                      onChange={() => toggleEvent(event.id)}
+                      style={{ width: 18, height: 18, accentColor: '#7a1c2e' }}
+                    />
+                    {event.title}
+                    <span style={{ color: '#8a6a44', fontSize: 13 }}>&middot; {event.date}</span>
+                  </label>
+                ))}
+              </div>
+              <div
+                style={{
+                  borderLeft: '3px solid #7a1c2e',
+                  background: '#f7ecd8',
+                  padding: '12px 14px',
+                }}
+              >
+                <p
+                  style={{
+                    margin: 0,
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontWeight: 600,
+                    fontSize: 16,
+                    lineHeight: 1.6,
+                    color: '#5c3d1f',
+                    textWrap: 'balance',
+                  }}
+                >
+                  Please note, 11&ndash;12 Nov 2026 fall on a Wednesday and Thursday &mdash; both working days. Do
+                  plan your leave accordingly!
+                </p>
+              </div>
+            </div>
+          )}
 
           <label
             style={{

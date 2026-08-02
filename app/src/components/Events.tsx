@@ -3,9 +3,17 @@ import { events } from '../data/wedding';
 import { Reveal } from './Reveal';
 import { prefersAppleCalendar } from '../lib/calendar';
 
+function splitEventDate(date: string) {
+  const match = /^(\D+?)\s*(\d+)\s+(\d+)$/.exec(date.trim());
+  if (!match) return { month: date, day: '', year: '' };
+  const [, month, day, year] = match;
+  return { month, day, year };
+}
+
 function EventCard({ event, defaultOpen = false }: { event: (typeof events)[number]; defaultOpen?: boolean }) {
   const [open, setOpen] = useState(defaultOpen);
   const calendarHref = prefersAppleCalendar() ? event.icsHref : event.googleHref;
+  const { month, day, year } = splitEventDate(event.date);
 
   return (
     <Reveal style={{ border: '1px solid #ddc9a8', background: '#fdf8ef' }}>
@@ -27,8 +35,19 @@ function EventCard({ event, defaultOpen = false }: { event: (typeof events)[numb
         }}
       >
         <span>
-          <span style={{ display: 'block', fontSize: 11, letterSpacing: '.28em', textTransform: 'uppercase', color: '#8a6a44' }}>
-            {event.date}
+          <span
+            style={{
+              display: 'block',
+              fontSize: 15,
+              letterSpacing: '.22em',
+              textTransform: 'uppercase',
+              color: '#5c3d1f',
+              fontWeight: 600,
+            }}
+          >
+            {month}{' '}
+            <span style={{ fontSize: 22, fontWeight: 700, color: '#7a1c2e', letterSpacing: 'normal' }}>{day}</span>{' '}
+            {year}
           </span>
           <span
             style={{

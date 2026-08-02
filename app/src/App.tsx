@@ -9,12 +9,15 @@ import { Venue } from './components/Venue';
 import { Rsvp } from './components/Rsvp';
 import { ThankYou } from './components/ThankYou';
 import { BottomNav } from './components/BottomNav';
+import { MusicToggle } from './components/MusicToggle';
+import { useBackgroundMusic, MUSIC_LOOP_END_SECONDS } from './hooks/useBackgroundMusic';
 
 const SHOW_PETALS = true;
 const SHOW_COUNTDOWN = true;
 
 function App() {
   const [opened, setOpened] = useState(false);
+  const { audioRef, muted, start: startMusic, toggleMute } = useBackgroundMusic();
 
   const guest = useMemo(() => {
     try {
@@ -25,6 +28,7 @@ function App() {
   }, []);
 
   const openInvitation = () => {
+    startMusic();
     setOpened(true);
     setTimeout(() => {
       const el = document.getElementById('invitation');
@@ -45,6 +49,8 @@ function App() {
     >
       {SHOW_PETALS && <Petals />}
 
+      <audio ref={audioRef} src="/audio/background-music.mp3" loop={MUSIC_LOOP_END_SECONDS == null} preload="auto" />
+
       <Cover guest={guest} onOpen={openInvitation} />
 
       {opened && (
@@ -57,6 +63,7 @@ function App() {
           <Rsvp guestQuery={guest} />
           <ThankYou />
           <BottomNav />
+          <MusicToggle muted={muted} onToggle={toggleMute} />
         </div>
       )}
     </div>

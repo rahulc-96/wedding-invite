@@ -15,4 +15,5 @@ export interface RsvpRecord {
   guests: number;
   note: string;
   guest_query?: string;
+  attending_events: string[];
 }

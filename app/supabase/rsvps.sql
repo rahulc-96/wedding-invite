@@ -8,7 +8,8 @@ create table if not exists public.rsvps (
   name text not null,
   guests smallint not null default 1,
   note text default '',
-  guest_query text
+  guest_query text,
+  attending_events text[] not null default '{}'::text[]
 );
 
 alter table public.rsvps enable row level security;
