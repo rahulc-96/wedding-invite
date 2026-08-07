@@ -127,8 +127,8 @@ export function Events() {
       </Reveal>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-        {events.map((event, i) => (
-          <EventCard key={event.id} event={event} defaultOpen={i === 0} />
+        {events.map((event) => (
+          <EventCard key={event.id} event={event} />
         ))}
       </div>
     </section>

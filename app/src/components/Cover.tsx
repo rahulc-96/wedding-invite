@@ -1,4 +1,4 @@
-import coverArt from '../assets/textless-page-1.png';
+import coverArt from '../assets/textless-page-1-v2.png';
 
 interface CoverProps {
   guest: string;
@@ -55,9 +55,9 @@ export function Cover({ guest, onOpen }: CoverProps) {
         <img
           src={coverArt}
           alt="Rahul and Supriya"
-          width={1024}
-          height={1536}
-          style={{ display: 'block', width: '100%', height: 'auto', aspectRatio: '1024 / 1536' }}
+          width={1086}
+          height={1448}
+          style={{ display: 'block', width: '100%', height: 'auto', aspectRatio: '1086 / 1448' }}
         />
         <div
           style={{
