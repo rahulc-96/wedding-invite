@@ -48,7 +48,7 @@ export const events: EventInfo[] = [
     title: 'Wedding',
     time: '5 PM onwards',
     description: 'The muhurtham at dusk followed by dinner and blessings.',
-    dress: 'Traditional formal, ivory & gold welcome',
+    dress: 'Traditional Formal· Ivory is Welcome',
     where: 'The Farmhouse Collective',
     icsHref: buildIcsBlobUrl('Wedding', '20261112T113000Z', '20261112T170000Z'),
     icsFilename: 'wedding.ics',
