@@ -1,7 +1,7 @@
 export function buildGoogleCalendarUrl(title: string, start: string, end: string, location: string): string {
   const params = new URLSearchParams({
     action: 'TEMPLATE',
-    text: title + ' — Rahul & Supriya',
+    text: title + ' — Supriya & Rahul',
     dates: start + '/' + end,
     location,
   });

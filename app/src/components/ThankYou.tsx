@@ -26,11 +26,11 @@ export function ThankYou() {
           We cannot wait to celebrate with you.
         </p>
         <p style={{ margin: '26px 0 0', fontSize: 11, letterSpacing: '.36em', textTransform: 'uppercase', color: '#e2bd94' }}>
-          Rahul &amp; Supriya &middot; Nov 2026
+          Supriya &amp; Rahul &middot; Nov 2026
         </p>
         <a
           href={invitationDownload}
-          download="Rahul-Supriya-Invitation.jpg"
+          download="Supriya-Rahul-Invitation.jpg"
           style={{
             marginTop: 26,
             minHeight: 44,

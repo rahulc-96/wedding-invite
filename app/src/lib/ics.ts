@@ -3,7 +3,7 @@ export function buildIcsBlobUrl(title: string, start: string, end: string): stri
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
     'BEGIN:VEVENT',
-    'SUMMARY:' + title + ' — Rahul & Supriya',
+    'SUMMARY:' + title + ' — Supriya & Rahul',
     'DTSTART:' + start,
     'DTEND:' + end,
     'LOCATION:Farmhouse Collective, Bangalore',

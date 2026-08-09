@@ -60,9 +60,9 @@ export function Invitation() {
               color: '#8a6a44',
             }}
           >
-            Chandrain Ashoka Rao
+            Subodh Sahai
             <br />
-            &amp; Chandrain Anitha Rao
+            &amp; Priti Sahai
           </p>
           <p
             style={{
@@ -77,7 +77,7 @@ export function Invitation() {
             <br />
             the wedding celebration
             <br />
-            of their beloved son
+            of their beloved daughter
           </p>
           <h2
             style={{
@@ -88,7 +88,7 @@ export function Invitation() {
               lineHeight: 1.2,
             }}
           >
-            Rahul Chandrain Rao
+            Supriya Sahai
           </h2>
           <p style={{ margin: '.6cqw 0', fontStyle: 'italic', fontSize: '3.1cqw', color: '#8a6a44' }}>with</p>
           <h2
@@ -100,10 +100,10 @@ export function Invitation() {
               lineHeight: 1.2,
             }}
           >
-            Supriya Sahai
+            Rahul Chandrain Rao
           </h2>
           <p style={{ margin: '2cqw 0 0', fontSize: '2.8cqw', letterSpacing: '.04em', color: '#6d5a45' }}>
-            cherished daughter of
+            cherished son of
           </p>
           <p
             style={{
@@ -115,9 +115,9 @@ export function Invitation() {
               color: '#8a6a44',
             }}
           >
-            Subodh Sahai
+            Chandrain Ashoka Rao
             <br />
-            &amp; Priti Sahai
+            &amp; Chandrain Anitha Rao
           </p>
         </div>
       </Reveal>

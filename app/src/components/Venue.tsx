@@ -3,7 +3,7 @@ import { Reveal } from './Reveal';
 
 export function Venue() {
   const share = async () => {
-    const data = { title: 'Rahul & Supriya', text: 'Join us on 11–12 Nov 2026 in Bangalore', url: location.href };
+    const data = { title: 'Supriya & Rahul', text: 'Join us on 11–12 Nov 2026 in Bangalore', url: location.href };
     try {
       if (navigator.share) {
         await navigator.share(data);

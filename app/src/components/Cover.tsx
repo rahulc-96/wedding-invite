@@ -1,4 +1,4 @@
-import coverArt from '../assets/textless-page-1-v2.png';
+import coverArt from '../assets/textless-page-1.png';
 
 interface CoverProps {
   guest: string;
@@ -54,7 +54,7 @@ export function Cover({ guest, onOpen }: CoverProps) {
       <div style={{ position: 'relative', width: '100%', containerType: 'inline-size' }}>
         <img
           src={coverArt}
-          alt="Rahul and Supriya"
+          alt="Supriya and Rahul"
           width={1086}
           height={1448}
           style={{ display: 'block', width: '100%', height: 'auto', aspectRatio: '1086 / 1448' }}
@@ -93,7 +93,7 @@ export function Cover({ guest, onOpen }: CoverProps) {
               whiteSpace: 'nowrap',
             }}
           >
-            Rahul &amp; Supriya
+            Supriya &amp; Rahul
           </h1>
           <p
             style={{
