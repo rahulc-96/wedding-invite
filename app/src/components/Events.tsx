@@ -5,15 +5,17 @@ import { prefersAppleCalendar } from '../lib/calendar';
 
 function splitEventDate(date: string) {
   const match = /^(\D+?)\s*(\d+)\s+(\d+)$/.exec(date.trim());
-  if (!match) return { month: date, day: '', year: '' };
+  if (!match) return { month: date, day: '', year: '', weekday: '' };
   const [, month, day, year] = match;
-  return { month, day, year };
+  const parsed = new Date(date);
+  const weekday = Number.isNaN(parsed.getTime()) ? '' : parsed.toLocaleDateString('en-US', { weekday: 'short' });
+  return { month, day, year, weekday };
 }
 
 function EventCard({ event, defaultOpen = false }: { event: (typeof events)[number]; defaultOpen?: boolean }) {
   const [open, setOpen] = useState(defaultOpen);
   const calendarHref = prefersAppleCalendar() ? event.icsHref : event.googleHref;
-  const { month, day, year } = splitEventDate(event.date);
+  const { month, day, year, weekday } = splitEventDate(event.date);
 
   return (
     <Reveal style={{ border: '1px solid #ddc9a8', background: '#fdf8ef' }}>
@@ -45,6 +47,7 @@ function EventCard({ event, defaultOpen = false }: { event: (typeof events)[numb
               fontWeight: 600,
             }}
           >
+            {weekday && `${weekday}, `}
             {month}{' '}
             <span style={{ fontSize: 22, fontWeight: 700, color: '#7a1c2e', letterSpacing: 'normal' }}>{day}</span>{' '}
             {year}

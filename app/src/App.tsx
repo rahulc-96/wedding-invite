@@ -57,11 +57,11 @@ function App() {
         <div>
           <Invitation />
           <BlessingNote />
+          {SHOW_COUNTDOWN && <Countdown />}
           <Events />
           <Venue />
           <Rsvp guestQuery={guest} />
           <ThankYou />
-          {SHOW_COUNTDOWN && <Countdown />}
           <BottomNav />
           <MusicToggle muted={muted} onToggle={toggleMute} />
         </div>

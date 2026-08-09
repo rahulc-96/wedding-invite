@@ -35,7 +35,7 @@ export function Invitation() {
             With the Blessings of
           </p>
           <p style={{ margin: '.6cqw 0 0', fontSize: '2.8cqw', letterSpacing: '.2em', textTransform: 'uppercase' }}>
-            Almighty and Elders
+            Almighty
           </p>
           <div
             style={{
