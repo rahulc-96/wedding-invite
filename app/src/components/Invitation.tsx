@@ -17,7 +17,7 @@ export function Invitation() {
             position: 'absolute',
             left: '22%',
             right: '22%',
-            top: '13%',
+            top: '25%',
             textAlign: 'center',
             color: '#7a1c2e',
           }}
@@ -25,17 +25,15 @@ export function Invitation() {
           <p
             style={{
               margin: 0,
-              fontFamily: "'Cormorant Garamond', serif",
-              fontStyle: 'italic',
-              fontSize: '3cqw',
-              lineHeight: 1.5,
+              fontSize: '2.6cqw',
+              lineHeight: 1.6,
+              letterSpacing: '.1em',
+              textTransform: 'uppercase',
               color: '#8a6a44',
+              textWrap: 'balance' as const,
             }}
           >
-            With the Blessings of
-          </p>
-          <p style={{ margin: '.6cqw 0 0', fontSize: '2.8cqw', letterSpacing: '.2em', textTransform: 'uppercase' }}>
-            Almighty
+            With joyful hearts, we invite you to shower your blessings &amp; celebrate the union of
           </p>
           <div
             style={{
@@ -43,54 +41,13 @@ export function Invitation() {
               alignItems: 'center',
               justifyContent: 'center',
               gap: '2cqw',
-              margin: '2.4cqw 0',
+              margin: '2cqw 0',
             }}
           >
             <span style={{ height: 1, width: '7cqw', background: '#c2a26a' }} />
             <span style={{ color: '#b08a4a', fontSize: '2.6cqw' }}>&#10087;</span>
             <span style={{ height: 1, width: '7cqw', background: '#c2a26a' }} />
           </div>
-          <p
-            style={{
-              margin: 0,
-              fontFamily: "'Cormorant Garamond', serif",
-              fontStyle: 'italic',
-              fontSize: '3.1cqw',
-              lineHeight: 1.45,
-              color: '#8a6a44',
-            }}
-          >
-            Subodh Sahai
-            <br />
-            &amp; Priti Sahai
-          </p>
-          <p
-            style={{
-              margin: '1.6cqw 0 0',
-              fontSize: '2.8cqw',
-              lineHeight: 1.6,
-              letterSpacing: '.04em',
-              color: '#6d5a45',
-            }}
-          >
-            cordially invite you to grace
-            <br />
-            the wedding celebration
-            <br />
-            of their beloved daughter
-          </p>
-          <h2
-            style={{
-              margin: '2.2cqw 0 0',
-              fontFamily: "'Great Vibes', cursive",
-              fontWeight: 400,
-              fontSize: '6.2cqw',
-              lineHeight: 1.2,
-            }}
-          >
-            Supriya Sahai
-          </h2>
-          <p style={{ margin: '.6cqw 0', fontStyle: 'italic', fontSize: '3.1cqw', color: '#8a6a44' }}>with</p>
           <h2
             style={{
               margin: 0,
@@ -100,24 +57,55 @@ export function Invitation() {
               lineHeight: 1.2,
             }}
           >
-            Rahul Chandrain Rao
+            Supriya
           </h2>
-          <p style={{ margin: '2cqw 0 0', fontSize: '2.8cqw', letterSpacing: '.04em', color: '#6d5a45' }}>
-            cherished son of
-          </p>
           <p
             style={{
-              margin: '.6cqw 0 0',
+              margin: '.8cqw 0 0',
               fontFamily: "'Cormorant Garamond', serif",
               fontStyle: 'italic',
-              fontSize: '3.1cqw',
-              lineHeight: 1.45,
+              fontSize: '2.6cqw',
+              lineHeight: 1.5,
               color: '#8a6a44',
             }}
           >
-            Chandrain Ashoka Rao
+            D/o Mr. Subodh Sahai and Mrs. Priti Sahai
             <br />
-            &amp; Chandrain Anitha Rao
+            Grand D/o Late Mr. C.G. Sahai and Late Mrs. K.D. Khare*
+          </p>
+          <p
+            style={{
+              margin: '1.6cqw 0',
+              fontFamily: "'Great Vibes', cursive",
+              fontSize: '4.4cqw',
+              color: '#b08a4a',
+            }}
+          >
+            &amp;
+          </p>
+          <h2
+            style={{
+              margin: 0,
+              fontFamily: "'Great Vibes', cursive",
+              fontWeight: 400,
+              fontSize: '6.2cqw',
+              lineHeight: 1.2,
+            }}
+          >
+            Rahul
+          </h2>
+          <p
+            style={{
+              margin: '.8cqw 0 0',
+              fontFamily: "'Cormorant Garamond', serif",
+              fontStyle: 'italic',
+              fontSize: '2.6cqw',
+              lineHeight: 1.5,
+              color: '#8a6a44',
+              textWrap: 'balance' as const,
+            }}
+          >
+            S/o Dr. Chandrain Ashoka Rao and Mrs. Chandrain Anitha Rao
           </p>
         </div>
       </Reveal>
