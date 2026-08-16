@@ -55,7 +55,7 @@ export function Rsvp({ guestQuery }: RsvpProps) {
   };
 
   return (
-    <section id="rsvp" style={{ scrollMarginTop: 0, padding: '66px 26px 74px', background: '#f7eee1' }}>
+    <section id="rsvp" style={{ scrollMarginTop: 0, padding: '50px 26px 74px', background: '#f7eee1' }}>
       <Reveal style={{ textAlign: 'center', marginBottom: 26 }}>
         <p style={{ margin: 0, fontSize: 11, letterSpacing: '.4em', textTransform: 'uppercase', color: '#8a6a44' }}>
           RSVP by 10 Oct 2026

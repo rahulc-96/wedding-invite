@@ -56,10 +56,10 @@ function App() {
       {opened && (
         <div>
           <Invitation />
-          <BlessingNote />
           {SHOW_COUNTDOWN && <Countdown />}
           <Events />
           <Venue />
+          <BlessingNote />
           <Rsvp guestQuery={guest} />
           <ThankYou />
           <BottomNav />

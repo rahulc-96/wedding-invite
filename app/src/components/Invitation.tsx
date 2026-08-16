@@ -17,7 +17,7 @@ export function Invitation() {
             position: 'absolute',
             left: '22%',
             right: '22%',
-            top: '25%',
+            top: '21%',
             textAlign: 'center',
             color: '#7a1c2e',
           }}
@@ -25,6 +25,41 @@ export function Invitation() {
           <p
             style={{
               margin: 0,
+              fontFamily: "'Cormorant Garamond', serif",
+              fontStyle: 'italic',
+              fontSize: '3cqw',
+              lineHeight: 1.5,
+              color: '#8a6a44',
+            }}
+          >
+            With the Blessings of
+          </p>
+          <p
+            style={{
+              margin: '.6cqw 0 0',
+              fontSize: '2.8cqw',
+              letterSpacing: '.2em',
+              textTransform: 'uppercase',
+            }}
+          >
+            Almighty &amp; Elders
+          </p>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '2cqw',
+              margin: '1.4cqw 0 0',
+            }}
+          >
+            <span style={{ height: 1, width: '7cqw', background: '#c2a26a' }} />
+            <span style={{ color: '#b08a4a', fontSize: '2.6cqw' }}>&#10087;</span>
+            <span style={{ height: 1, width: '7cqw', background: '#c2a26a' }} />
+          </div>
+          <p
+            style={{
+              margin: '1.4cqw 0 0',
               fontSize: '2.6cqw',
               lineHeight: 1.6,
               letterSpacing: '.1em',
@@ -33,24 +68,11 @@ export function Invitation() {
               textWrap: 'balance' as const,
             }}
           >
-            With joyful hearts, we invite you to shower your blessings &amp; celebrate the union of
+            We warmly invite you to join us in celebrating and blessing the union of
           </p>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '2cqw',
-              margin: '2cqw 0',
-            }}
-          >
-            <span style={{ height: 1, width: '7cqw', background: '#c2a26a' }} />
-            <span style={{ color: '#b08a4a', fontSize: '2.6cqw' }}>&#10087;</span>
-            <span style={{ height: 1, width: '7cqw', background: '#c2a26a' }} />
-          </div>
           <h2
             style={{
-              margin: 0,
+              margin: '2cqw 0 0',
               fontFamily: "'Great Vibes', cursive",
               fontWeight: 400,
               fontSize: '6.2cqw',
